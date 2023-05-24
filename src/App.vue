@@ -1,21 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue"
 
-const now = new Date()
-const nowStr = now.toLocaleTimeString()
-let timeStr = nowStr
-const timeStrRef = ref(nowStr)
-
-function changeTime() :void {
-  const newTime = new Date()
-  const newTimeStr = newTime.toLocaleTimeString()
-  // timeStr = newTimeStr
-  timeStrRef.value = newTimeStr
-}
-setInterval(changeTime, 1000)
+const msg = ref("未送信");
+const onFormSubmit = ():void => {
+  msg.value = "送信されました";
+};
 </script>
 
 <template>
-  <p>現在時刻： {{ timeStr }}</p>
-  <p>現在時刻： {{ timeStrRef }}</p>
+  <form action="#" v-on:submit.prevent="onFormSubmit">
+    <input type="text" required>
+    <button type="submit">送信</button>
+  </form>
+  <p>{{ msg }}</p>
 </template>
