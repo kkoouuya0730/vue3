@@ -45,8 +45,10 @@ const deleteTodo = (id: string): void => {
 <template>
   <h1>Vue3基礎</h1>
   <section>
-    <input type="text" v-model="todoTitle"/>
-    <button @click="onSaveButtonClick">保存</button>
+    <form action="#" v-on:submit.prevent="onSaveButtonClick">
+      <input type="text" v-model="todoTitle" required/>
+      <button>保存</button>
+    </form>
     <TodoItem
       v-for="todo in todoList"
       v-bind:key="todo.id"
