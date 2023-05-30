@@ -5,3 +5,10 @@ export interface Member {
     points: number;
     note?: string;
 }
+
+export interface Todo {
+    id: string,
+    title: string
+    done: boolean
+  }
+  
