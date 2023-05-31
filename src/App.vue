@@ -3,6 +3,7 @@ import { ref } from "vue"
 import TodoItem from "./components/TodoItem.vue";
 import type {Todo} from "./interfaces"
 import {v4 as uuidv4} from 'uuid'
+import {RouterView} from "vue-router"
 
 const todoTitle = ref('')
 
@@ -59,4 +60,7 @@ const deleteTodo = (id: string): void => {
       v-on:delete-todo="deleteTodo"
     />
   </section>
+  <main>
+    <RouterView/>
+  </main>
 </template>

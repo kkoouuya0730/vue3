@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "uuid": "^9.0.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@types/uuid": "^9.0.1",
